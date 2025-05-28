@@ -1,0 +1,67 @@
+  <header class="header">
+
+        <nav class="header-nav">
+
+            <div class="header-left-container">
+
+                <a asp-action="index" asp-controller="home">
+                    <div id="logo-image">
+                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                        Foodplanner
+                    </div>
+                </a>
+
+            </div>
+            
+            <div class="header-right-container">
+
+                <input placeholder="Search..." id="header-input" type="search"/>            
+
+                <a asp-action="index" asp-controller="community">
+                    <i class='fa-solid fa-comment header-button'></i>
+                </a>
+              
+                <a>
+                    <i class="fa-solid fa-arrows-rotate header-button"></i>
+                </a>
+              
+                @if(Context.Items["User"] == null){
+                    <a asp-action="SignInView" asp-controller="Auth">
+                        <i class='fa-solid fa-right-to-bracket header-button'></i>
+                    </a>
+                }
+
+                @if(Context.Items["User"] != null){
+                    <a asp-action="ClearCookie" asp-controller="home">
+                        <i class='fa-solid fa-right-from-bracket header-button'></i>
+                    </a>
+                }
+
+            
+
+                <div class="generator-drpd-wrap">
+                    <div class="generator-spacing-div">
+
+                        <a asp-action="index" asp-controller="generator">
+                            <div class="generator-drpd-browse">
+                                Browse recipes
+                            </div>
+                        </a>
+                        <div class="generator-drpd-tocart">
+                            Generate
+                        </div>
+                        <div class="generator-drpd-items">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+
+
+    </header>
+
+    <script src="~/js/Main/Header.js" type="module" asp-append-version="true"></script>

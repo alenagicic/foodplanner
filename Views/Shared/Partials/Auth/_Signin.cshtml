@@ -1,0 +1,68 @@
+@model Lifeplanner.Models.SignInModel;
+
+
+@{
+    var navString = "";
+
+    if (TempData["header"] == "Sign In")
+    {
+        navString = "signin";
+    }
+    if (TempData["header"] == "User not found")
+    {
+        navString = "SignUp";
+    }
+    if (TempData["header"] == "Sign Up")
+    {
+        navString = "SignUp";
+    }
+    if(TempData["header"] == "User already exists")
+    {
+        navString = "SignUp";
+    }
+}
+
+<div class="main-signin-wrapper">
+
+    <form asp-action="@navString" asp-controller="auth" method="post" class="signin-form">
+
+        <h1>
+            @TempData["header"]
+        </h1>
+
+        <label class="signin-labels">
+            Username
+        </label>
+
+        <input asp-for="Username" type="text" placeholder="Enter username" class="signin-inputs"/>
+        <span asp-validation-for="Username" class="text-danger"></span>
+
+        <label class="signin-labels">
+            Password
+        </label>
+
+        <input asp-for="Password" type="password" placeholder="Enter password" class="signin-inputs"/>
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+        @if(TempData["header"] != "Sign In"){
+            <input type="submit" class="signin-btn" value="Create a new account!"/>
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+        }
+        else{
+            <input type="submit" class="signin-btn" value="Sign in"/>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        }
+
+        @if(TempData["header"] == "Sign In"){
+            <p style="color: #1abc9c; padding-top:0.5rem">
+                No account? <a asp-action="signupview" asp-controller="auth" style="color: teal;">Sign up!</a>
+            </p>
+        }
+     
+
+    </form>
+
+</div>
+
+<script src="~/js/Main/Auth.js" type="module" asp-append-version="true"></script>

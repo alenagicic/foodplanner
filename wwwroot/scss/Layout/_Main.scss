@@ -1,0 +1,374 @@
+
+
+body {
+    color: #2c3e50!important;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)!important;
+
+    user-select: none;
+   
+}
+
+
+a {
+color: whitesmoke;
+}
+
+a:hover {
+color: whitesmoke;
+}
+
+
+
+// Main Layout below
+
+.header {
+    display:flex;
+    align-items:center;
+    height: 10vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  
+    .header-nav{
+      display:flex;
+      justify-content: space-between;
+      width: 100%;
+      column-gap: 5%;
+
+      a{
+        text-decoration: none;
+      }
+      
+      .header-left-container {        
+        width: 20%;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+  
+        #logo-image{
+          font-family: 'Poppins', sans-serif;
+          font-size: 2.4rem;
+          font-weight: 500;
+          margin: 0px;
+          color: #1abc9c;
+          padding: 0px;
+        }
+      }
+  
+      .header-right-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        column-gap: 1rem;
+        position: static;
+        margin: 0px;
+        padding: 0px;
+  
+        #header-input {
+          display: none;
+          height: calc(2.5rem); 
+          width: 20%;
+          height: 2.8rem;
+          padding-left: 1rem;
+          border: none;
+          color: whitesmoke!important;
+          border-radius: 2rem;
+          box-sizing: border-box;
+          transition-duration: 0.2s;
+          background-color: transparent;
+          border: 1px solid  #1abc9c;
+          cursor: pointer;
+        }
+
+        #header-input::placeholder {
+          font-size: 1rem;
+          color: #1abc9c;
+          font-weight: 600;
+
+        }
+          
+        #header-input:focus{
+          width: 20rem;
+          outline: none;
+          color: black;
+        }
+
+        #header-input:hover{
+          background-color: #1abc9c;
+        }
+
+        #header-input:hover::placeholder {
+          color: white;
+        }
+        
+
+        .header-button{
+          height:2.8rem;
+          width: 7rem;
+          border: 1px solid #1abc9c;
+          background-color: white;
+          border-radius: 2rem;
+          color: #1abc9c;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+
+        .generator-drpd-wrap{
+          margin-top: 3rem;
+          height: 10rem;
+          position: absolute;
+          margin-right: 2.5rem;
+          top: 0rem;
+          width: 18rem;
+          height: 25rem;
+          border-radius: 0.4rem;
+          overflow: auto;
+          overflow-x: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-top: 0.2rem;
+          display: none;
+          opacity: 0;
+          transition: opacity 0.5s cubic-bezier(0.3, 0, 0.2, 1);
+          z-index: 100;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          background-color: transparent;          
+
+          .generator-spacing-div{
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+            border-radius: 0.2rem;
+            height: 20rem;
+            border: 1px solid #aaaaaa77;
+            box-shadow: 4px 4px 12px rgba(110, 108, 108, 0.112);
+            z-index: 10;
+
+            .generator-drpd-browse{
+              background-color: whitesmoke;
+              color: black;
+              text-decoration: none!important;
+              height: 2.5rem;
+              display: flex;
+              align-items: center;
+              border-top-left-radius: 0.2rem;
+              border-top-right-radius: 0.2rem;
+              justify-content: flex-start;
+              padding-left: 0.5rem;
+              border: 1px solid #1abc9c;
+              background-color: #E5E5E5;
+              border-bottom: 1px solid lightgray;
+              background-color: #1abc9c;
+              color: whitesmoke;
+              margin-left: 0.5rem;
+              margin-right: 0.5rem;
+            }
+
+            .generator-drpd-browse:hover{
+              background-color: transparent!important;
+              color: #1abc9c;
+              border: 1px solid #1abc9c;
+              transition-duration: 0.2s;
+            }
+
+            .generator-drpd-items{
+              height: 13.5rem;
+              display: flex;
+              flex-direction: column;
+              row-gap: 0.2rem;
+              padding-top: 0.2rem;
+              overflow: auto;
+              overflow-x: hidden;
+              opacity: 1;
+              margin: 0.5rem;
+              border-radius: 0.2rem;
+              border: 1px solid lightgray;
+
+
+              div{
+                display: flex;
+                min-height: 2.5rem;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 0.5rem;
+                padding-right: 1rem;
+                border-bottom: 1px solid lightgray;
+                justify-content: space-between;
+                position: relative;
+                animation: slideIn 1s ease-out forwards;
+
+
+                p{
+                  margin: 0px;
+                  padding: 0px;
+
+                }
+
+                i{
+                  font-size: 1rem;
+                  position: relative;
+
+                }
+
+              }
+
+              div:hover{
+                text-decoration: underline;
+
+                i{
+                  cursor: pointer;
+                  transition-duration: 0.2s;
+                  transform: scale(1.2);
+                  color: #1abc9c;
+                }
+              }
+
+            }
+
+            .generator-drpd-tocart{
+              color: #2c3e50;
+              background-color: whitesmoke;
+              text-decoration: none;
+              min-height: 2.5rem;
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              justify-content: flex-start;
+              padding-left: 0.5rem;
+              border: 1px solid #1abc9c;
+              cursor: pointer;
+              background-color: #E5E5E5;
+              margin-bottom: 0px;
+              border-bottom-left-radius: 0.2rem;
+              border-bottom-right-radius: 0.2rem;
+              background-color: #1abc9c;
+              color: whitesmoke;
+              margin-left: 0.5rem;
+              margin-right: 0.5rem;
+            }
+
+            .generator-drpd-tocart:hover{
+              background-color: transparent!important;
+              color: #1abc9c;
+              transition-duration: 0.2s;
+
+            }
+          }
+       
+
+        }
+
+        .header-button:hover{
+          background-color: #1abc9c;
+          color: white;
+          font-weight: 600;
+          transition-duration: 0.2s;
+        }
+
+
+
+  
+      }
+    }
+}
+
+@media screen and (max-width:820px){
+
+  .header{
+
+    .header-nav{
+
+      .header-left-container{
+          #logo-image{
+            font-size: 1.2rem!important;
+          }
+      }
+
+      .header-right-container{
+        #header-input {
+            display: none!important;
+        }
+
+        .header-button{
+          border-radius: 0.2rem;
+          font-size: 1rem!important;
+          width: 3rem;
+        }
+
+        .generator-drpd-wrap{
+          z-index: 150;
+          margin-right: 0rem!important;
+          padding-right: 0rem!important;
+        }
+      }
+
+    }
+  }
+
+
+  .main-container{
+    height: auto!important;
+  }
+
+}
+
+.main-container {
+display: flex;
+height: 90vh;
+width: 100%;
+padding-left: 1rem;
+padding-right: 1rem;
+column-gap: 1rem;
+overflow: visible;
+padding-bottom: 1rem;
+
+.main-container-partials {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+    border-radius: 0.4rem;
+}
+
+}
+
+.footer-main {
+height: 5vh;
+display: flex;
+align-items: center;
+padding-left: 1.1rem;
+color: whitesmoke!important ;
+opacity: 0.9;
+
+}
+
+
+
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(0.5); /* Start small */
+  }
+  30% {
+    transform: rotate(90deg) scale(1.1); /* Scale up to 1.2 */
+  }
+  50% {
+    transform: rotate(180deg) scale(1.4); /* Increase to 1.5 for the bounce */
+  }
+  70% {
+    transform: rotate(270deg) scale(1.2); /* Slight shrink before bouncing back */
+  }
+  100% {
+    transform: rotate(360deg) scale(1); /* Final size */
+  }
+}
+

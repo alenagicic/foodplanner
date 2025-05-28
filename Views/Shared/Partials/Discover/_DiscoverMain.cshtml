@@ -1,0 +1,182 @@
+@model Lifeplanner.ViewModels.GeneratorViewModel
+
+@{
+
+        List<string> Categories = new(){
+        "Savory",
+        "Fiesta",
+        "Sweets",
+        "Decadence",
+        "Grandmas Cooking",
+        "Quick & Simple",
+        "Comfort Food",
+        "Healthy Bites",
+        "Vegetarian Delights",
+        "Vegan Treats",
+        "Seasonal Favorites",
+        "Street Food",
+        "Gourmet",
+        "Breakfast Bliss",
+        "Exotic Flavors",
+        "Meal Prep",
+        "Gluten-Free Goodies",
+        "Low-Carb Creations",
+        "Family Favorites",
+        "Appetizers & Snacks",
+        "Beverages",
+        "Baking Wonders",
+        "Food on the Go"
+    };
+        
+        List<string> RecipeHeaders = new(){
+        // Savory
+        "Tomato Basil Soup",
+        "Garlic Butter Shrimp Pasta",
+        "Savory Herb Chicken Pot Pie",
+        "Beef Wellington",
+        "Cheddar and Broccoli Stuffed Chicken",
+
+        // Fiesta
+        "Spicy Beef Tacos",
+        "Margarita Chicken Fajitas",
+        "Chili Lime Shrimp Quesadillas",
+        "Fiesta Nachos with Guacamole",
+        "Spicy Mexican Street Corn",
+
+        // Sweets
+        "Classic Chocolate Chip Cookies",
+        "Vanilla Bean Cheesecake",
+        "Strawberry Shortcake",
+        "Caramel Brownies",
+        "Apple Cinnamon Rolls",
+    };
+
+}
+
+<div class="discover-main-wrp">
+
+    <div class="discover-scroll-ctgry">
+
+        <div class="tag-container-discover">
+            <div class="discover-heading-selection">
+                    <div class="discover-submit-recipe">
+                    
+                        <div>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>
+                                Create
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-rotate"></i>
+                            <span>
+                                Reload
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-tags"></i>
+                            <span>
+                                Tags
+                            </span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+            </div>
+            
+            <div class="tag-container-items">
+                @foreach(var item in Model.listTags!){
+                
+                    <a asp-action="GetMultipleOnTag" asp-asp-controller="discover" asp-route-value="@item.Tag">
+                        <div class="discover-ctgry-container">
+                            @item.Tag
+                        </div>
+                    </a>
+
+                }
+            </div>
+        </div>
+         
+    </div>
+
+    <div class="discover-scroll-cntnt">
+        <div class="scroll-cntn-dropshadow">
+
+        </div>
+
+        @foreach(var item in Model.list!){
+            <div class="discover-recipe-container">
+                <div class="discover-img-cntr">
+                    <img id="discover-img" src="@item.ImageRecipe"/>
+                </div>
+                <div class="discover-info-cntr">
+                    
+                        <div class="discover-img-heading">
+                            @item.Heading
+                        </div>
+                        <div class="discover-img-rating">
+                            
+                            <div id="recipe-id" style="display: none;">
+                                @item.Id
+                            </div>
+                            
+                            @if(Convert.ToInt32(item.RatingRecipe) == 1){
+                                <i class="fa-solid fa-star" data-star="1"></i>
+                                <i class="fa-regular fa-star" data-star="2"></i>
+                                <i class="fa-regular fa-star" data-star="3"></i>
+                                <i class="fa-regular fa-star" data-star="4"></i>
+                                <i class="fa-regular fa-star" data-star="5"></i>
+                            }
+                            @if(Convert.ToInt32(item.RatingRecipe) == 2){
+                                <i class="fa-solid fa-star" data-star="1"></i>
+                                <i class="fa-solid fa-star" data-star="2"></i>
+                                <i class="fa-regular fa-star" data-star="3"></i>
+                                <i class="fa-regular fa-star" data-star="4"></i>
+                                <i class="fa-regular fa-star" data-star="5"></i>
+                            }
+                            @if(Convert.ToInt32(item.RatingRecipe) == 3){
+                                <i class="fa-solid fa-star" data-star="1"></i>
+                                <i class="fa-solid fa-star"data-star="2"></i>
+                                <i class="fa-solid fa-star" data-star="3"></i>
+                                <i class="fa-regular fa-star" data-star="4"></i>
+                                <i class="fa-regular fa-star" data-star="5"></i>
+                            }
+                            @if(Convert.ToInt32(item.RatingRecipe) == 4){
+                                <i class="fa-solid fa-star" data-star="1"></i>
+                                <i class="fa-solid fa-star" data-star="2"></i>
+                                <i class="fa-solid fa-star" data-star="3"></i>
+                                <i class="fa-solid fa-star" data-star="4"></i>
+                                <i class="fa-regular fa-star" data-star="5"></i>
+                            }
+                            @if(Convert.ToInt32(item.RatingRecipe) == 5){
+                                <i class="fa-solid fa-star" data-star="1"></i>
+                                <i class="fa-solid fa-star" data-star="2"></i>
+                                <i class="fa-solid fa-star" data-star="3"></i>
+                                <i class="fa-solid fa-star" data-star="4"></i>
+                                <i class="fa-solid fa-star" data-star="5"></i>
+                            }
+                          
+                        </div>
+                        <div class="discover-img-rating">
+                            <p>
+                                Created By:&nbsp; @item.Author
+                            </p>
+                        </div>
+                        <div class="discover-img-rating">
+                            <p>
+                                Published:&nbsp;@item.CreatedDate
+                            </p>
+                         
+                        </div>
+                    
+                </div>
+             
+            </div>
+        }
+
+    </div>
+
+</div>
+
+<script src="~/js/Partials/Discover.js" asp-append-version="true"></script>

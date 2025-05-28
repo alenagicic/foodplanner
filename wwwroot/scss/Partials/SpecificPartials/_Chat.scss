@@ -1,0 +1,484 @@
+
+// CSS RESIDES IN THE COMPONENTS(JS) HERE IN THE INDUVIDUAL CLASSES BELOW AND IN THE "FIRST EDITION" AT THE BOTTOM
+// ! WILL NEED TO BE REFACTORED ! 
+
+
+.collapse-button-cmnt:hover{
+    transition-duration: 0.2s;
+    animation: twist 0.5s ease;
+    background-color: rgb(1, 153, 153);
+    border:  rgb(1, 153, 153)!important;
+
+}
+
+.fa-arrow-left{
+    color:#1abc9c;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid #1abc9c;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    cursor: pointer;
+}
+
+.fa-arrow-left:hover{
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+    background-color: #1abc9c;
+    color: whitesmoke;
+    animation: twist 0.5s ease;
+}
+
+.comment-reply:hover{
+    transition-duration: 0.2s;
+    animation: twistLittle 0.5s ease;
+    background-color: rgb(1, 153, 153)!important;
+
+}
+
+.comment-reply{
+    border-radius: 0.2rem;
+}
+
+.collapse-button-cmnt{
+    background-color: #1abc9c;
+    color: whitesmoke!important;
+}
+
+.topic-chat{
+    border: 1px solid #aaa; 
+    padding:1rem;
+    width: auto;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 4px rgba(0, 128, 128, 0.1); /* Light teal shadow */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+
+
+}
+
+.comment-item-inner{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 0.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem!important;
+    width: auto!important;
+    box-shadow: 0 2px 4px rgba(0, 128, 128, 0.1); /* Light teal shadow */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+
+
+
+    .comment-item-inner-cntnt{
+        padding-top: 1rem!important;
+        padding-bottom: 1rem!important;
+    }
+}
+
+.comment-container-js{
+    padding-left: 0rem!important;
+    margin-left: 0rem!important;
+    padding-top: 0.5rem;
+    position: relative;
+    animation: slideIn 1s ease;
+
+}
+
+
+@keyframes jiggle {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes twist {
+    0% {
+        transform: rotate(0deg) scale(1); /* Initial position and scale */
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.1); /* Twist to the left and scale slightly */
+    }
+    50% {
+        transform: rotate(10deg) scale(1.15); /* Twist to the right and scale more */
+    }
+    75% {
+        transform: rotate(-10deg) scale(1.1); /* Twist back to the left and scale slightly */
+    }
+    100% {
+        transform: rotate(0deg) scale(1); /* Return to original position and scale */
+    }
+}
+
+@keyframes twistLittle {
+    0% {
+        transform: rotate(0deg) scale(1); /* Initial position and scale */
+    }
+    25% {
+        transform: rotate(-5deg) scale(1.01); /* Twist to the left and scale slightly */
+    }
+    50% {
+        transform: rotate(5deg) scale(1.02); /* Twist to the right and scale more */
+    }
+    75% {
+        transform: rotate(-5deg) scale(1.01); /* Twist back to the left and scale slightly */
+    }
+    100% {
+        transform: rotate(0deg) scale(1); /* Return to original position and scale */
+    }
+}
+
+
+@media screen and (max-width:820px){
+
+    // Fill window with chat!
+
+    .displayTopic-wrapper{
+        width: 80vw!important;
+    }
+
+    .submitTopic-wrapper{
+        width: 80vw!important;
+    }
+
+}
+
+
+
+// BELOW IS FIRST EDITION OF CSS FOR CHAT USES SOME; SOME NOT!
+
+// CSS for display topic & comment
+.displayTopic-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.26);
+    animation: fadeIn 0.2s ease-in-out forwards;
+
+
+    .hidden-topic-id-field{
+        display: none;
+    }
+    .topicTopic{
+        margin: 0px;
+        padding: 0px;
+        height: 2rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        font-size: 1.1rem;
+        color: #1abc9c;
+        margin-left: 0.2rem;
+        top: 0.5rem;
+        display: none;
+
+    }
+    .header-styling-topic{
+        background-color: #1abc9c;
+        color: whitesmoke;
+        text-shadow: 2px 2px 5px gray; /* Horizontal, vertical, blur, and color */
+        display: flex;
+        align-items: center;
+        padding-left: 0.5rem!important;
+        height: 2rem!important;
+        position: sticky;
+        top: 0px;
+    }
+    .bodyTopic{
+        height: 70%;
+        height: 100%;
+        border: 1px solid #aaa;
+        border-radius: 0.2rem;
+        overflow: auto;
+        overflow-x: hidden;
+        background-color: white;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        scroll-behavior: smooth;
+    }
+    .commentContainer{
+        border: 1px solid #aaa ;
+        overflow: auto;
+        overflow-x: hidden;
+        height: 10rem;
+        width: 100%;
+        background-color: white;
+
+        p{
+            margin: 0px;
+            padding: 0px;
+            min-height: 2rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid lightgray;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+    }
+    .commentArea{
+        height: 3.5rem;
+        padding-left: 0.5rem;
+        width: 100%;
+        padding-top: 0.5rem;
+        border-radius: 0.2rem;
+
+    }
+    .commentArea:focus {
+        outline: none;
+        box-sizing: border-box;
+        border:2px solid #1abc9c;
+    }
+    .submitButton{
+        min-height: 2.5rem;
+        //text-shadow: 2px 2px 5px gray; /* Horizontal, vertical, blur, and color */
+        display: flex;
+        border: 1px solid #1abc9c;
+        color: whitesmoke;
+        font-weight: 600;
+        background-color: #1abc9c;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 0.2rem;
+        box-shadow: 0 2px 4px rgba(0, 128, 128, 0.1); /* Light teal shadow */
+
+
+    }
+    .submitButton:hover{
+        border: 1px solid #1abc9c;
+        color: whitesmoke;
+        background-color: #1abc9c;
+        font-weight: 600;
+        transition-duration: 0.2s;
+    }
+    .exitbutton{
+        min-height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        border: 1px solid #1abc9c;
+        color: #1abc9c;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 0.2rem;
+        box-shadow: 0 2px 4px rgba(0, 128, 128, 0.1); /* Light teal shadow */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+
+
+    }
+    .exitbutton:hover{
+        background: none;
+        border: 1px solid #e74c3c;
+        color: whitesmoke;
+        font-weight: 600;
+        transition-duration: 0.2s;
+        background-color: #eb5848; /* Red color for exit button */
+    }
+
+      
+    .bodyTopic::-webkit-scrollbar {
+        width: 5px; /* Width of the vertical scrollbar */
+        height: 10px; /* Height of the horizontal scrollbar (for horizontal scroll) */
+        display: none;
+    }
+    
+    .bodyTopic::-webkit-scrollbar-thumb {
+        background-color: whitesmoke; /* Color of the scrollbar thumb */
+        border-radius: 0.4rem; /* Rounded corners for the thumb */
+        /* Don't set height here for vertical scrollbar, it won't work */
+        border: 1px solid rgba(245, 245, 245, 0.582);
+        cursor: pointer;
+    }
+    
+    .bodyTopic::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1); /* Optional: Set track background color */
+    }
+    
+    .bodyTopic::-webkit-scrollbar-thumb:vertical {
+        min-height: 2rem; /* Minimum height of the vertical scrollbar thumb */
+        max-height: 5rem; /* Optional: Set max height */
+    }
+
+
+    .commentContainer::-webkit-scrollbar {
+        width: 5px; /* Width of the vertical scrollbar */
+        height: 10px; /* Height of the horizontal scrollbar (for horizontal scroll) */
+        display: none;
+    }
+    
+    .commentContainer::-webkit-scrollbar-thumb {
+        background-color: whitesmoke; /* Color of the scrollbar thumb */
+        border-radius: 0.4rem; /* Rounded corners for the thumb */
+        /* Don't set height here for vertical scrollbar, it won't work */
+        border: 1px solid rgba(245, 245, 245, 0.582);
+        cursor: pointer;
+    }
+    
+    .commentContainer::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1); /* Optional: Set track background color */
+    }
+    
+    .commentContainer::-webkit-scrollbar-thumb:vertical {
+        min-height: 2rem; /* Minimum height of the vertical scrollbar thumb */
+        max-height: 5rem; /* Optional: Set max height */
+    }
+
+}
+// CSS for display create topic
+.submitTopic-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    background-color: white;
+    padding: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.26);
+    animation: fadeIn 0.2s ease-in-out forwards;
+
+
+    .submitTopic-header{
+        min-height: 2.5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        width: 100%;
+        border-radius: 0.2rem;
+        text-transform: capitalize;
+        margin: 0px;
+        padding: 0px;
+        color: #1abc9c;
+    }
+
+    .submitTopic-topic{
+        min-height: 2.5rem;
+        padding-left: 0.5rem;
+        width: 100%;
+        border-radius: 0.2rem;
+        
+    }
+
+    .submitTopic-topic:focus{
+        outline: none;
+        box-sizing: border-box;
+        border: none;
+        transition-duration: 0.1s;
+        outline:2px solid #1abc9c;
+    }
+
+    .submitTopic-textarea{
+        height: 40%;
+        padding-left: 0.5rem;
+        width: 100%;
+        border-radius: 0.2rem;
+        margin-bottom: auto;
+
+    }
+
+    .submitTopic-textarea:focus{
+        outline: none;
+        border: none;
+        box-sizing: border-box;
+        transition-duration: 0.1s;
+        outline:2px solid #1abc9c;
+    }
+
+    .submitTopic-btn{
+        min-height: 2.5rem;
+        display: flex;
+        border: 1px solid #1abc9c;
+        color: whitesmoke;
+        font-weight: 600;
+        background-color: #1abc9c;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 0.2rem;
+        box-shadow: 0 2px 4px rgba(0, 128, 128, 0.1);
+    }
+
+    .submitTopic-btn:hover{
+        border: 1px solid #1abc9c;
+        color: whitesmoke;
+        background-color: #1abc9c;
+        font-weight: 600;
+        transition-duration: 0.2s;
+    }
+
+    .submitTopic-btn-exit{
+        min-height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        border: 1px solid #1abc9c;
+        color: #1abc9c;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 0.2rem;
+        box-shadow: 0 2px 4px rgba(0, 128, 128, 0.1);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+    }
+
+    .submitTopic-btn-exit:hover{
+        background: none;
+        border: 1px solid #e74c3c;
+        color: whitesmoke;
+        font-weight: 600;
+        transition-duration: 0.2s;
+        background-color: #eb5848; /* Red color for exit button */
+    }
+}
+

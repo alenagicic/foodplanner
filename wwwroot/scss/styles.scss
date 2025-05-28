@@ -1,0 +1,13 @@
+
+@use 'Layout/_Main';
+@use 'Partials/GeneralPartials/_Editor';
+@use 'Partials/SpecificPartials/_FoodMain';
+@use 'Partials/SpecificPartials/FoodAdd';
+@use 'Partials/SpecificPartials/ShoppingMain';
+@use 'Partials/SpecificPartials/FoodEdit';
+@use 'Layout/MainPage';
+@use 'Partials/GeneralPartials/PopUp';
+@use 'Partials/SpecificPartials/Discover';
+@use 'Partials/SpecificPartials/Community';
+@use 'Partials/SpecificPartials/Auth';
+@use 'Partials/SpecificPartials/Chat'

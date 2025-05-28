@@ -1,0 +1,501 @@
+input{
+    border: 1px solid #aaa;
+}
+
+textarea{
+    border: 1px solid #aaa;
+}
+
+@media screen and (max-width:1200px){
+    .cmnt-data{
+            
+        .fa-reply{
+            display: none!important;
+        }
+
+        .latest-reply{
+            display: none;
+        }
+
+    }
+
+    .cntr-interactions{
+        justify-content: flex-end!important;
+    }
+   
+}
+
+@media screen and (max-width:520px){
+    .cntr-interactions{
+        display: none!important;
+    }
+
+    .cntr-header{
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width:820px){
+    .community-main-wrapper{
+        flex-wrap: wrap;
+
+        .community-navbar{
+            flex-direction: row!important;
+            width: 100%;
+
+
+            .community-navbar-items{
+
+                .nav-dot{
+                    width: 3rem!important;
+                    height: 3rem!important;
+
+                }
+            }
+        }
+
+        .cmnt-data{
+            
+            .fa-reply{
+                display: none!important;
+            }
+
+            .latest-reply{
+                display: none;
+            }
+
+        }
+
+        .community-cntr-toappend {
+            margin-left: 0rem!important;
+            margin-right: 0rem!important;
+        }
+
+        .index-latest-convos{
+            margin-right: 0rem!important;
+            margin-left: 0rem!important;
+        }
+       
+        .community-main-cntr::before {
+            visibility: hidden;
+        }
+    }
+
+    .community-main-latest{
+        width: 100%!important;
+        margin-left: 0rem!important;
+    }
+
+}
+
+.community-main-wrapper{
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    padding-top: 0.5rem;
+        
+    .community-navbar{
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        flex-direction: column;
+        row-gap: 1.5rem;
+        margin-bottom: 0.5rem;
+        z-index: 100;
+        margin-top: 4.5rem;
+
+        .community-navbar-items{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            color: black;
+            border-radius: 2rem;
+            min-height: 3rem;
+            font-weight: 600;
+            cursor: pointer;
+
+            .nav-dot{
+                width: 4rem;
+                height: 3rem;
+                border-radius: 0.2rem;
+                margin-right: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+
+                i{
+                    color: white;
+                    font-size: 1rem;
+                }
+
+
+            }
+
+            .nav-dot i {
+                transition: transform 0.2s forwards;
+                transform-origin: center;
+            }
+            
+            .nav-dot:hover i {
+                transform: scale(1.1);
+            }
+            
+
+        }
+    
+        .community-btn-cntrbt{
+            display: flex;
+            align-items: center;
+            font-style: normal;
+            background-color: #1abc9c;
+            align-items: center;
+            justify-content: center;
+            column-gap: 0.5rem;
+            border-radius: 0.2rem;
+            color: white;
+            height: 3rem;
+            width: 4rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px #a7f0e323;
+            border: 1px solid transparent;
+            margin-top: auto;
+
+
+            i{
+                color: white;      
+                font-size: 1rem;   
+            }
+        }
+
+        .community-btn-cntrbt:hover{
+            cursor: pointer;
+            
+            i{
+                transition-duration: 0.2s;
+                font-size: 1.2rem!important;
+            }
+
+        }
+        
+
+    }
+
+    .community-main-cntr {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        column-gap: 0.2rem;
+        border-radius: 0.2rem;    
+
+        .community-main-cntr-clmn{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            display: none;
+            overflow: hidden;
+        
+            .community-main-clmn-header{
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 0px;
+                position: sticky;
+                top: 0px;
+                font-weight: 600;
+                min-height: 3rem;
+                padding-left: 0.2rem;
+                min-height: 4.5rem;
+                padding-bottom: 0.5rem;
+                font-size: 1.4rem;
+                position: relative;
+                transition: box-shadow 0.3s ease;
+
+                p{
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+            }
+
+            .wrapper-div-items{
+                display: flex;
+                flex-direction: column;
+                overflow: scroll;
+                row-gap: 1rem;
+                animation: fadeIn 1s ease-in-out forwards;
+                padding-bottom: 1rem;
+                
+                .community-cntr-toappend {
+                    min-height: 6rem;
+                    padding-left: 2rem;
+                    padding-right: 1rem;
+                    font-weight: 600;
+                    border: 1px solid #d0d0d0;
+                    border-radius: 0.2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    margin-left: 0.3rem;
+                    margin-right: 0.5rem;
+
+
+                    .cntr-header {
+                        height: 100%;
+                        display: flex;
+                        font-weight: 500;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        width: 50%;
+                        margin-right: 2rem;
+
+                        p{
+                            margin: 0px;
+                            padding: 0px;
+                        }
+
+
+                        .community-topic-sub{
+                            color: gray;
+                            font-size: 0.9rem;
+                        }
+                    }
+            
+                    .cntr-interactions {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 0.8rem;
+                        column-gap: 2rem;
+                        color: gray;
+                        justify-content: flex-start;
+                        width: 50%;
+
+                
+                        .cmnt-data {
+                            margin: 0px;
+                            padding: 0px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            i{
+                                margin: 0px;
+                                padding: 0px;
+                                margin-right: 1rem;
+                                min-width: 2rem;
+                                max-width: 2rem;
+                                font-size: 1rem;
+                                min-height: 2rem;
+                                max-height: 2rem;
+                                background-color: #1abc9c;
+                                border-radius: 50%;
+                                color: white;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center!important;
+                            }
+                        }
+                    }
+                }
+
+                .community-cntr-toappend:hover{
+                    cursor: pointer;
+                    transition-duration: 0.2s;
+                    border: 1px solid black;
+
+                }
+
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                .load-more-btn{
+
+                    background-color: #1abc9c;
+                    color: white;
+                    padding: 0.5rem;
+                    border-radius: 0.2rem;
+                    width: 12rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    margin-left: auto;
+                    margin-right: 0.5rem;
+                    transition-duration: 0.2s;
+
+                }
+
+                .load-more-btn:hover{
+                    background-color: transparent;
+                    color: unset;
+                }
+            }
+
+            .wrapper-div-items::-webkit-scrollbar {
+                width: 5px; /* Width of the vertical scrollbar */
+                height: 10px; /* Height of the horizontal scrollbar (for horizontal scroll) */
+                margin-left: 0.2rem!important;
+        
+            }
+            
+            .wrapper-div-items::-webkit-scrollbar-thumb {
+                background-color: #1abc9c; /* Color of the scrollbar thumb */
+                /* Don't set height here for vertical scrollbar, it won't work */
+                cursor: pointer;
+                margin-left: 0.2rem!important;
+        
+            }
+        
+            .wrapper-div-items::-webkit-scrollbar-track {
+                border-radius: 1rem;
+                height: 10rem!important;
+                margin-left: 0.2rem!important;
+            }
+            
+            .wrapper-div-items::-webkit-scrollbar-thumb:vertical {
+                min-height: 2rem; /* Minimum height of the vertical scrollbar thumb */
+                max-height: 5rem; /* Optional: Set max height */
+                margin-left: 0.2rem!important;
+        
+            }
+    
+        
+        }
+    
+    }
+
+    .community-main-latest {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 1s ease-in-out forwards;
+        margin-left: 1rem;
+        position: relative;
+        overflow: hidden;
+
+        .community-latest-header {
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 0px;
+            position: sticky;
+            top: 0px;
+            font-weight: 600;
+            min-height: 3rem;
+            padding-left: 0.2rem;
+            min-height: 4.5rem;
+            padding-bottom: 0.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            position: sticky;
+            top: 0px;
+            background-color: #fbfbfb;
+        }
+
+        .clm-two-general{
+            overflow: scroll;
+            
+            .index-latest-convos{
+                min-height: 4rem;
+                max-height: 4rem;
+                margin-right: 0.5rem;
+                min-height: 6rem;
+                padding-right: 1rem;
+                font-weight: 600;
+                border: 1px solid #d0d0d0;
+                border-radius: 0.2rem;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+                align-items: center;
+                margin-left: 0.3rem;
+
+
+                .category-thumb{
+                    min-width: 2rem;
+                    min-height: 2rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                }
+
+                #index-topic{
+                    width: 70%;
+                    margin: 0px;
+                    padding: 0px;
+                    display: flex;
+                    justify-content: flex-start;
+                    font-weight: 500;
+                    border: none;
+                    font-size: 0.9rem;
+                    overflow: hidden;
+                }
+
+            }
+
+            .index-latest-convos:hover{
+                cursor: pointer;
+                transition-duration: 0.2s;
+                border: 1px solid black;
+
+            }
+        }
+
+        .clm-two-general::-webkit-scrollbar {
+            width: 5px; /* Width of the vertical scrollbar */
+            height: 10px; /* Height of the horizontal scrollbar (for horizontal scroll) */
+            margin-left: 0.2rem!important;
+
+        }
+        
+        .clm-two-general::-webkit-scrollbar-thumb {
+            background-color: #1abc9c; /* Color of the scrollbar thumb */
+            /* Don't set height here for vertical scrollbar, it won't work */
+            cursor: pointer;
+            margin-left: 0.2rem!important;
+
+        }
+
+        .clm-two-general::-webkit-scrollbar-track {
+            border-radius: 1rem;
+            height: 10rem!important;
+            margin-left: 0.2rem!important;
+        }
+        
+        .clm-two-general::-webkit-scrollbar-thumb:vertical {
+            min-height: 2rem; /* Minimum height of the vertical scrollbar thumb */
+            max-height: 5rem; /* Optional: Set max height */
+            margin-left: 0.2rem!important;
+
+        }
+
+    }
+
+    .community-main-cntr::before {
+        content: "";
+        position: absolute;
+        background-color: #1abc9c;
+        bottom: 0; /* Position at the bottom of the div */
+        left: 0;
+        width: 100%; /* Full width of the parent div */
+        height: 10px; /* Adjust the height of the shadow */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Shadow applied to the bottom */
+    }
+}
