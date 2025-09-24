@@ -31,7 +31,8 @@ h1, h2, h3 {
 .main-container nav {
   display: flex;
   flex-direction: column;
-  min-width: 10%;
+  min-width: 5rem;
+  max-width: 5rem;
   align-items: center;
   row-gap: 2rem;
   padding-left: 1rem;
@@ -195,40 +196,33 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f8f8f8;
-  padding: 2rem;
+  width: 100%;
+  padding: 1rem;
 }
 .create-page-section .create-wrapper {
   width: 100%;
-  max-width: 600px;
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .create-page-section .create-wrapper .create-header-wrapper {
-  text-align: center;
-  margin-bottom: 2rem;
+  width: 100%;
 }
 .create-page-section .create-wrapper .create-header-wrapper h2 {
-  font-weight: 700;
   color: #333;
-  margin-bottom: 0.5rem;
 }
 .create-page-section .create-wrapper .create-header-wrapper p {
-  color: #666;
+  color: #333;
 }
 .create-page-section .create-wrapper .create-recipe-form {
   display: flex;
   flex-direction: column;
 }
 .create-page-section .create-wrapper .create-recipe-form .form-group {
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  padding-bottom: 1rem;
 }
 .create-page-section .create-wrapper .create-recipe-form .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
   font-weight: 500;
   color: #555;
 }
@@ -236,56 +230,39 @@ footer {
 .create-page-section .create-wrapper .create-recipe-form .form-group input[type=file],
 .create-page-section .create-wrapper .create-recipe-form .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.5rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 1rem;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  outline: 2px solid transparent;
 }
 .create-page-section .create-wrapper .create-recipe-form .form-group input[type=text]:focus,
 .create-page-section .create-wrapper .create-recipe-form .form-group input[type=file]:focus,
 .create-page-section .create-wrapper .create-recipe-form .form-group textarea:focus {
-  outline: none;
-  border-color: #4CAF50;
-}
-.create-page-section .create-wrapper .create-recipe-form .form-group textarea {
-  resize: vertical;
+  outline: 2px solid green;
+  outline-offset: 0.2rem;
 }
 .create-page-section .create-wrapper .create-recipe-form .submit-btn {
-  background-color: #4CAF50;
+  background-color: green;
   color: white;
   padding: 1rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 1rem;
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: 500;
   transition: background-color 0.3s;
 }
-.create-page-section .create-wrapper .create-recipe-form .submit-btn:hover {
-  background-color: #45a049;
-}
 
 .browse-page-section {
-  padding: 2rem;
-  background-color: #f8f8f8;
-  min-height: 100vh;
-}
-.browse-page-section .browse-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.browse-page-section .browse-wrapper .browse-header {
-  text-align: center;
-  margin-bottom: 3rem;
+  padding: 1rem;
+  width: 100%;
 }
 .browse-page-section .browse-wrapper .browse-header h2 {
-  font-weight: 700;
   color: #333;
-  margin-bottom: 0.5rem;
 }
 .browse-page-section .browse-wrapper .browse-header p {
-  color: #666;
+  color: #333;
 }
 .browse-page-section .browse-wrapper .recipe-grid {
   display: grid;
@@ -295,15 +272,14 @@ footer {
 .browse-page-section .browse-wrapper .recipe-card {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  outline: 1px solid #eee;
   text-decoration: none;
   color: inherit;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.browse-page-section .browse-wrapper .recipe-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+.browse-page-section .browse-wrapper .recipe-card:hover h4 {
+  text-decoration: underline;
 }
 .browse-page-section .browse-wrapper .recipe-card img {
   width: 100%;
@@ -317,7 +293,7 @@ footer {
 }
 .browse-page-section .browse-wrapper .recipe-card .card-content h4 {
   font-weight: 500;
-  color: #4CAF50;
+  color: green;
   margin-bottom: 0.5rem;
 }
 .browse-page-section .browse-wrapper .recipe-card .card-content p {
