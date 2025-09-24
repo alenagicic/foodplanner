@@ -1,0 +1,50 @@
+.main-signin-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 0.5rem;
+
+        label{
+            font-weight: 600;
+        }
+
+        input{
+            min-height: 3.5rem;
+            width: 100%;
+            border: 1px solid #eee;
+            outline: 2px solid transparent;
+            padding-left: 1rem;
+            border-radius: 1rem;
+
+            &:focus{
+                outline: 2px solid green;
+                outline-offset: 0.2rem;
+            }
+        }
+
+        .sigin-btn{
+            cursor: pointer;
+            background-color: green;
+            color: white;
+            font-size: inherit;
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 1020px){
+    .main-signin-wrapper{
+        form{
+            width: 60%;
+        }
+    }
+}

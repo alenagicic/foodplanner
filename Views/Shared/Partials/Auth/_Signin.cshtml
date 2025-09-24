@@ -24,45 +24,42 @@
 
 <div class="main-signin-wrapper">
 
-    <form asp-action="@navString" asp-controller="auth" method="post" class="signin-form">
+    <form asp-action="@navString" asp-controller="auth" method="post">
 
         <h1>
             @TempData["header"]
         </h1>
 
-        <label class="signin-labels">
+        <label>
             Username
         </label>
 
-        <input asp-for="Username" type="text" placeholder="Enter username" class="signin-inputs"/>
-        <span asp-validation-for="Username" class="text-danger"></span>
+        <input asp-for="Username" type="text" placeholder="Enter username"/>
+        <span asp-validation-for="Username"></span>
 
-        <label class="signin-labels">
+        <label>
             Password
         </label>
 
-        <input asp-for="Password" type="password" placeholder="Enter password" class="signin-inputs"/>
-        <span asp-validation-for="Password" class="text-danger"></span>
+        <input asp-for="Password" type="password" placeholder="Enter password"/>
+        <span asp-validation-for="Password"></span>
 
         @if(TempData["header"] != "Sign In"){
-            <input type="submit" class="signin-btn" value="Create a new account!"/>
-            <span asp-validation-for="Password" class="text-danger"></span>
-
+            <input class="sigin-btn" type="submit" value="Create a new account!"/>
+            <span asp-validation-for="Password"></span>
         }
         else{
-            <input type="submit" class="signin-btn" value="Sign in"/>
-            <span asp-validation-for="Password" class="text-danger"></span>
+            <input class="sigin-btn" type="submit" value="Sign in"/>
+            <span asp-validation-for="Password"></span>
         }
 
         @if(TempData["header"] == "Sign In"){
-            <p style="color: #1abc9c; padding-top:0.5rem">
-                No account? <a asp-action="signupview" asp-controller="auth" style="color: teal;">Sign up!</a>
+            <p>
+                No account? <a asp-action="signupview" asp-controller="auth">Sign up!</a>
             </p>
         }
      
-
     </form>
 
 </div>
 
-<script src="~/js/Main/Auth.js" type="module" asp-append-version="true"></script>

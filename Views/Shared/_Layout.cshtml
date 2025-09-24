@@ -4,14 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Lifeplanner</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Lifeplanner.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/scss/styles.css" asp-append-version="true" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Crimson+Pro&family=Tisa&family=Roboto+Slab&family=Muli&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -20,30 +16,24 @@
 
     <div class="main-container">
 
-        <div class="main-container-partials" role="main">
+        <nav>
+            <a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a>
+            <a asp-controller="Home" asp-action="Create"><i class="fa-regular fa-square-plus"></i></a>
+            <a asp-controller="Home" asp-action="Browse"><i class="fa-solid fa-folder"></i></a>
+        </nav>
 
-            
-                @RenderBody()
-            
-
+        <div class="wrapper-partials" role="main">
+            @RenderBody()
         </div>
         
     </div>
 
-    <footer style="display:none; font-size: 0.8rem; color: #2c3e50" class="footer-main">
+    <footer>
             &copy; 2025 - Foodplanner</a>     
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script src="https://kit.fontawesome.com/3742703543.js" crossorigin="anonymous"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/Main/MainSite.js" asp-append-version="true"></script>
-    <script src="~/js/Partials/popup.js"  type="module" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
-
-
 
 </body>
 </html>

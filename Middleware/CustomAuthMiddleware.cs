@@ -1,10 +1,6 @@
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using System.Threading.Tasks;
-
 
 namespace Lifeplanner.Middleware{
 

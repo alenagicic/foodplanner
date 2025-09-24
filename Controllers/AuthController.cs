@@ -1,10 +1,6 @@
-using Lifeplanner.Entity;
-using Lifeplanner.Factory;
 using Lifeplanner.Models;
 using Lifeplanner.Services;
-using Lifeplanner.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Lifeplanner.Controllers;
 
@@ -59,51 +55,6 @@ public class AuthController : Controller {
 
         TempData["header"] = "User already exists";
         return View("Partials/Auth/_Signin", model);
-    }
-
-    [HttpPost]
-    [Route("changepass/submission")]
-    public IActionResult ChangePass(IndexViewModel model){
-
-        var resultGet = _services.GetUser(model.Email!);
-
-        if(model.Password != resultGet.Password){
-            resultGet.Password = model.Password;
-            var result = _services.UpdateUser(resultGet);
-            if(result){
-                TempData["passwordError"] = "Successfully changed password";
-                return RedirectToAction("index", "home");
-            }
-        }
-
-        TempData["passwordError"] = "Failed to change password";
-        return RedirectToAction("index", "home");
-
-    }
-
-    [HttpPost]
-    [Route("changeusername/submission")]
-    public IActionResult ChangeUsername(IndexViewModel model){
-
-        var checkIfPsuedoExists = _services.CheckIfPsuedoExists(model.Username!);
-        if(checkIfPsuedoExists){
-            TempData["usernameError"] = "Username already exists";
-            return RedirectToAction("index", "home");
-        }
-
-        var resultGet = _services.GetUser(model.Email!);
-
-        if(model.Username != resultGet.PsuedoName){
-            resultGet.PsuedoName = model.Username;
-            var result = _services.UpdateUser(resultGet);
-            if(result){
-                TempData["usernameError"] = "Successfully changed username";
-                return RedirectToAction("index", "home");
-            }
-        }
-
-        TempData["usernameError"] = "Failed to change username";
-        return RedirectToAction("index", "home");
     }
 
 }

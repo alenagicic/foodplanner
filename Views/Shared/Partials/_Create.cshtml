@@ -1,0 +1,39 @@
+<section class="create-page-section">
+    <div class="create-wrapper">
+        <div class="create-header-wrapper">
+            <h2>Craft Your Culinary Masterpiece</h2>
+            <p>Ready to share your next delicious creation?</p>
+        </div>
+
+        <form class="create-recipe-form" action="/create" method="post" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label for="recipeTitle">Recipe Title</label>
+                <input type="text" id="recipeTitle" name="recipeTitle" placeholder="e.g., Grandma's Secret Apple Pie" required>
+            </div>
+
+            <div class="form-group">
+                <label for="recipeDescription">Description</label>
+                <textarea id="recipeDescription" name="recipeDescription" rows="5" placeholder="Tell us what makes this recipe special..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="recipeIngredients">Ingredients</label>
+                <textarea id="recipeIngredients" name="recipeIngredients" rows="7" placeholder="List your ingredients here, one per line."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="recipeInstructions">Instructions</label>
+                <textarea id="recipeInstructions" name="recipeInstructions" rows="10" placeholder="Step-by-step instructions for your recipe."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="recipeImage">Upload a Photo</label>
+                <input type="file" id="recipeImage" name="recipeImage" accept="image/*">
+            </div>
+
+            <button type="submit" class="submit-btn">Publish Recipe</button>
+
+        </form>
+    </div>
+</section>
